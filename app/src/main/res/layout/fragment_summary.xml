@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SummaryFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Title Label and TextView -->
+    <TextView
+        android:id="@+id/titleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title Data"
+        app:layout_constraintTop_toBottomOf="@+id/titleLabel"
+        android:layout_margin="20dp"/>
+
+    <!-- Description Label and TextView -->
+    <TextView
+        android:id="@+id/descriptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description Data"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionLabel"
+        android:layout_margin="20dp"/>
+
+    <!-- Date Label and TextView -->
+    <TextView
+        android:id="@+id/dateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date Data"
+        app:layout_constraintTop_toBottomOf="@+id/dateLabel"
+        android:layout_margin="20dp"/>
+
+    <!-- Time Label and TextView -->
+    <TextView
+        android:id="@+id/timeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time Data"
+        app:layout_constraintTop_toBottomOf="@+id/timeLabel"
+        android:layout_margin="20dp"/>
+
+    <!-- Next Button -->
+    <Button
+        android:id="@+id/summarynextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedule Noti"
+        app:layout_constraintTop_toBottomOf="@id/timeTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <!-- Cancel Button -->
+    <Button
+        android:id="@+id/summarycancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel Noti"
+        app:layout_constraintTop_toBottomOf="@id/timeTextView"
+        app:layout_constraintEnd_toStartOf="@id/summarynextButton"
+        android:layout_margin="16dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

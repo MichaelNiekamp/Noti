@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DateFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Title Label and Text Box -->
+    <TextView
+        android:id="@+id/titleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="16dp"/>
+    <DatePicker
+        android:id="@+id/dater"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        app:layout_constraintTop_toBottomOf="@+id/titleLabel"
+        android:layout_margin="16dp"/>
+
+    <!-- Description Label and Text Box (Larger) -->
+    <TextView
+        android:id="@+id/descriptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/dater"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"/>
+
+    <TimePicker
+        android:id="@+id/timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionLabel"
+        android:layout_margin="16dp"/>
+
+    <!-- Next Button -->
+    <Button
+        android:id="@+id/datenextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintTop_toBottomOf="@id/timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <!-- Cancel Button -->
+    <Button
+        android:id="@+id/datecancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        app:layout_constraintTop_toBottomOf="@id/timer"
+        app:layout_constraintEnd_toStartOf="@id/datenextButton"
+        android:layout_margin="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
