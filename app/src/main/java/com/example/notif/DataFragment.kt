@@ -8,12 +8,13 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.notif.databinding.FragmentDataBinding
 import com.example.notif.model.NotiViewModel
 
 class DataFragment : Fragment() {
+
+    private var binding : FragmentDataBinding? = null
     private val sharedViewModel: NotiViewModel by activityViewModels()
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

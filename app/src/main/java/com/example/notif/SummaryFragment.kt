@@ -8,9 +8,11 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.notif.databinding.FragmentSummaryBinding
 import com.example.notif.model.NotiViewModel
 
 class SummaryFragment : Fragment() {
+    private var binding : FragmentSummaryBinding? = null
     private val sharedViewModel: NotiViewModel by activityViewModels()
 
     override fun onCreateView(
