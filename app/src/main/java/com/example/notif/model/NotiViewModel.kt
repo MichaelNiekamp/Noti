@@ -20,7 +20,7 @@ class NotiViewModel: ViewModel() {
     fun setTitle(title: String) {
         _title.value = title
     }
-
+    // comment
     fun setDesc(desc: String) {
         _desc.value = desc
     }
