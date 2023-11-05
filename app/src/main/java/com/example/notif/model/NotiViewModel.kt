@@ -14,8 +14,8 @@ class NotiViewModel: ViewModel() {
     private val _date = MutableLiveData<String>("")
     val date: LiveData<String> = _date
 
-    private val _time = MutableLiveData<String>("")
-    val time: LiveData<String> = _time
+    private val _time = MutableLiveData<Long>(0)
+    val time: LiveData<Long> = _time
 
     fun setTitle(title: String) {
         _title.value = title
@@ -29,7 +29,7 @@ class NotiViewModel: ViewModel() {
         _date.value = date
     }
 
-    fun setTime(time: String) {
+    fun setTime(time: Long) {
         _time.value = time
     }
 }
