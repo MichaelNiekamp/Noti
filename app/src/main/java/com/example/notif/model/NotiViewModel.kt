@@ -5,13 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class NotiViewModel: ViewModel() {
-    private val _title = MutableLiveData<String>("")
+    private val _title = MutableLiveData<String>("Is this")
     val title: LiveData<String> = _title
 
-    private val _desc = MutableLiveData<String>("")
+    private val _desc = MutableLiveData<String>("working?")
     val desc: LiveData<String> = _desc
 
-    private val _date = MutableLiveData<String>("")
+    private val _date = MutableLiveData<String>()
     val date: LiveData<String> = _date
 
     private val _time = MutableLiveData<Long>(0)

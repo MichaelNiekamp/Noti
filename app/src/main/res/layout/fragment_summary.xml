@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.notif.model.NotiViewModel" /> <!-- Replace with your ViewModel's package and class name -->
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SummaryFragment"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".SummaryFragment">
 
     <!-- Title Label and TextView -->
     <TextView
@@ -22,7 +29,7 @@
         android:id="@+id/titleTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Title Data"
+        android:text="@{viewModel.title}"
         app:layout_constraintTop_toBottomOf="@+id/titleLabel"
         android:layout_margin="20dp"/>
 
@@ -41,7 +48,7 @@
         android:id="@+id/descriptionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Description Data"
+        android:text="@{viewModel.desc}"
         app:layout_constraintTop_toBottomOf="@+id/descriptionLabel"
         android:layout_margin="20dp"/>
 
@@ -86,23 +93,14 @@
     <!-- Next Button -->
     <Button
         android:id="@+id/summarynextButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Schedule Noti"
+        android:text="Schedule Another Noti"
         app:layout_constraintTop_toBottomOf="@id/timeTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
-
-    <!-- Cancel Button -->
-    <Button
-        android:id="@+id/summarycancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cancel Noti"
-        app:layout_constraintTop_toBottomOf="@id/timeTextView"
-        app:layout_constraintEnd_toStartOf="@id/summarynextButton"
         android:layout_margin="16dp"/>
 
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
