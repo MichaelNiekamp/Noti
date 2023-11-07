@@ -77,9 +77,12 @@ class DateFragment : Fragment() {
 
     private fun showAlert(time: Long, title: String, message: String) {
         val date = Date(time)
+
         val dateFormat = DateFormat.getLongDateFormat(activity?.applicationContext)
         val timeFormat = DateFormat.getTimeFormat(activity?.applicationContext)
 
+        sharedViewModel.setDate(dateFormat.format(date))
+        sharedViewModel.setTime(timeFormat.format(time))
         AlertDialog.Builder(activity)
             .setTitle("Noti Scheduled")
             .setMessage("Title: "+title+"\nMessage: "+message+"\nAt: "+dateFormat.format(date)+" "+timeFormat.format(time))

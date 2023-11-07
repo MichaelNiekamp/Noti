@@ -67,7 +67,7 @@
         android:id="@+id/dateTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Date Data"
+        android:text="@{viewModel.date}"
         app:layout_constraintTop_toBottomOf="@+id/dateLabel"
         android:layout_margin="20dp"/>
 
@@ -86,7 +86,7 @@
         android:id="@+id/timeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Time Data"
+        android:text="@{viewModel.time}"
         app:layout_constraintTop_toBottomOf="@+id/timeLabel"
         android:layout_margin="20dp"/>
 
