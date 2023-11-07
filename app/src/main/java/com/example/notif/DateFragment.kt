@@ -68,6 +68,7 @@ class DateFragment : Fragment() {
         val title = sharedViewModel.title.value.toString()
         val message = sharedViewModel.desc.value.toString()
         intent.putExtra(messageExtra, message)
+        intent.putExtra(titleExtra, title)
         val pendingIntent = PendingIntent.getBroadcast(activity?.applicationContext, notificationID, intent, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
         val alarmManager = activity?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val time = getTime()
