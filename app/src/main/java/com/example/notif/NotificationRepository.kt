@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 class NotificationRepository(private val notificationDAO: NotificationDAO) {
     val allNotis: Flow<List<Notification>> = notificationDAO.getAllNotis()
-    val rankedNotis: Flow<List<Notification>> = notificationDAO.getRankedNotis()
+//    val rankedNotis: Flow<List<Notification>> = notificationDAO.getRankedNotis()
 
     @WorkerThread
     suspend fun insertNotification(notification: Notification){

@@ -16,6 +16,9 @@
             app:launchSingleTop="false"
             app:popUpTo="@id/dataFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_notiList"
+            app:destination="@id/notiList" />
     </fragment>
     <fragment
         android:id="@+id/dataFragment"
@@ -52,6 +55,15 @@
         tools:layout="@layout/fragment_summary" >
         <action
             android:id="@+id/action_summaryFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notiList"
+        android:name="com.example.notif.NotiList"
+        android:label="fragment_noti_list"
+        tools:layout="@layout/fragment_noti_list" >
+        <action
+            android:id="@+id/action_notiList_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

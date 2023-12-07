@@ -13,8 +13,6 @@ data class Notification(
     val notiDate: String,
     @ColumnInfo
     val notiTime: String,
-    @ColumnInfo
-    val notiRank: Int,
     @PrimaryKey(autoGenerate = true)
     val id: Int? = null
 )

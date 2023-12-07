@@ -9,10 +9,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.notif.databinding.FragmentSummaryBinding
 import com.example.notif.model.NotiViewModel
+import com.example.notif.model.NotificationModelFactory
 
 class SummaryFragment : Fragment() {
     private lateinit var binding : FragmentSummaryBinding
-    private val sharedViewModel: NotiViewModel by activityViewModels()
+    private val sharedViewModel: NotiViewModel by activityViewModels {
+        NotificationModelFactory((activity?.application as NotiApplication).repository)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,6 +30,15 @@ class SummaryFragment : Fragment() {
         binding.viewModel = sharedViewModel
         binding.lifecycleOwner = viewLifecycleOwner
         button1.setOnClickListener{
+            // save notification to database
+            val notificationInstance = Notification(
+                notiTitle = sharedViewModel.title.toString(),
+                notiDesc = sharedViewModel.desc.toString(),
+                notiDate = sharedViewModel.date.toString(),
+                notiTime = sharedViewModel.time.toString()
+            )
+            sharedViewModel.addNoti(notificationInstance)
+            // navigate to home fragment
             findNavController().navigate(R.id.action_summaryFragment_to_homeFragment)
         }
 

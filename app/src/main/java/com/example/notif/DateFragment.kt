@@ -20,13 +20,16 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.notif.databinding.FragmentDateBinding
 import com.example.notif.model.NotiViewModel
+import com.example.notif.model.NotificationModelFactory
 import java.util.Calendar
 import java.util.Date
 
 
 class DateFragment : Fragment() {
     private var binding : FragmentDateBinding? = null
-    private val sharedViewModel: NotiViewModel by activityViewModels()
+    private val sharedViewModel: NotiViewModel by activityViewModels {
+        NotificationModelFactory((activity?.application as NotiApplication).repository)
+    }
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(

@@ -18,6 +18,6 @@ interface NotificationDAO {
     @Query("SELECT * FROM noti_table ORDER BY notiDate")
     fun getAllNotis(): Flow<List<Notification>>
 
-    @Query("SELECT * FROM noti_table ORDER BY notiRank")
-    fun getRankedNotis(): Flow<List<Notification>>
+//    @Query("SELECT * FROM noti_table ORDER BY notiRank")
+//    fun getRankedNotis(): Flow<List<Notification>>
 }

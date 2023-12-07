@@ -9,11 +9,14 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.notif.databinding.FragmentDataBinding
 import com.example.notif.model.NotiViewModel
+import com.example.notif.model.NotificationModelFactory
 
 class DataFragment : Fragment() {
 
     private lateinit var binding : FragmentDataBinding
-    private val sharedViewModel: NotiViewModel by activityViewModels()
+    private val sharedViewModel: NotiViewModel by activityViewModels {
+        NotificationModelFactory((activity?.application as NotiApplication).repository)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
