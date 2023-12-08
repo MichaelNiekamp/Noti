@@ -22,7 +22,7 @@ abstract class NotiDatabase: RoomDatabase() {
                     context.applicationContext,
                     NotiDatabase::class.java,
                     name = "noti_database"
-                ).build()
+                ).allowMainThreadQueries().build()
                 INSTANCE = instance
                 instance
             }

@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.asLiveData
 import com.example.notif.Notification
 import com.example.notif.NotificationRepository
 import kotlinx.coroutines.CoroutineScope
@@ -12,8 +11,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class NotiViewModel(private val repository: NotificationRepository): ViewModel() {
-
-    var notis: LiveData<List<Notification>> = repository.allNotis.asLiveData()
 
     private val _title = MutableLiveData<String>("Is this")
     val title: LiveData<String> = _title
@@ -28,6 +25,9 @@ class NotiViewModel(private val repository: NotificationRepository): ViewModel()
     val time: LiveData<String> = _time
 
     fun addNoti(noti: Notification) = CoroutineScope(Dispatchers.IO).launch { repository.insertNotification(noti) }
+    fun getNotis(): List<Notification> {
+        return repository.allNotis
+    }
 
     fun setTitle(title: String) {
         _title.value = title

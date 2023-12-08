@@ -40,6 +40,7 @@ class DateFragment : Fragment() {
         // Inflate the layout for this fragment
         val fragmentBinding = FragmentDateBinding.inflate(inflater, container, false)
         binding = fragmentBinding
+
         val button1 = binding!!.datenextButton
         button1.setOnClickListener{
             scheduleNotification()

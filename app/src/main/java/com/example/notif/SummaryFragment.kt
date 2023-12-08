@@ -24,7 +24,6 @@ class SummaryFragment : Fragment() {
         val fragmentBinding = FragmentSummaryBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         val button1 = binding!!.summarynextButton
-        // Initialize your shared ViewModel
 
         // Bind the ViewModel to the layout
         binding.viewModel = sharedViewModel
@@ -32,10 +31,10 @@ class SummaryFragment : Fragment() {
         button1.setOnClickListener{
             // save notification to database
             val notificationInstance = Notification(
-                notiTitle = sharedViewModel.title.toString(),
-                notiDesc = sharedViewModel.desc.toString(),
-                notiDate = sharedViewModel.date.toString(),
-                notiTime = sharedViewModel.time.toString()
+                notiTitle = sharedViewModel.title.value.toString(),
+                notiDesc = sharedViewModel.desc.value.toString(),
+                notiDate = sharedViewModel.date.value.toString(),
+                notiTime = sharedViewModel.time.value.toString()
             )
             sharedViewModel.addNoti(notificationInstance)
             // navigate to home fragment
